@@ -24,9 +24,12 @@ public class TimeModelTestbed {
 			}
 		}
 
-		Time time = new Time(17, 9, 10);
+		Time time = new Time(22, 59, 10);
 
 		System.out.println(time.toString());
+		
+		LanguageController englishTimePrinter = new LanguageController(time);
+		System.out.println(englishTimePrinter.printTimeInEnglish());
 
 	}
 

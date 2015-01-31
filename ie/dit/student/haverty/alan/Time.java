@@ -97,5 +97,17 @@ public class Time {
 		time.set(Calendar.MINUTE, minute);
 		time.set(Calendar.SECOND, second);
 	}
+	
+	public int getHour() {
+		return time.get(Calendar.HOUR_OF_DAY);
+	}
+	
+	public int getMinute() {
+		return time.get(Calendar.MINUTE);
+	}
+	
+	public int getSecond() {
+		return time.get(Calendar.SECOND);
+	}
 
 }
