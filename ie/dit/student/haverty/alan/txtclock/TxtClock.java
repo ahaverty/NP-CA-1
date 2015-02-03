@@ -1,4 +1,4 @@
-package ie.dit.student.haverty.alan;
+package ie.dit.student.haverty.alan.txtclock;
 
 public class TxtClock {
 

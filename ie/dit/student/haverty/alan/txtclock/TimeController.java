@@ -1,4 +1,4 @@
-package ie.dit.student.haverty.alan;
+package ie.dit.student.haverty.alan.txtclock;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

@@ -1,4 +1,4 @@
-package ie.dit.student.haverty.alan;
+package ie.dit.student.haverty.alan.txtclock;
 
 /**
  * Controller class to manage the translation of the Time object into english

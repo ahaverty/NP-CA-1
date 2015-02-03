@@ -1,4 +1,4 @@
-package ie.dit.student.haverty.alan;
+package ie.dit.student.haverty.alan.adder;
 
 import java.util.ArrayList;
 import java.util.List;
