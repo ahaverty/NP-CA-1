@@ -46,3 +46,5 @@ bin/
 *.project
 *.prefs
 *.class
+script.txt
+src/txtclock/commons-net-3.3-sources.jar

@@ -1,3 +1,9 @@
+/**
+ * Alan Haverty
+ * C12410858
+ * alan.haverty@student.dit.ie
+ * Network Programming CA 1 - NTP TxtClock
+ */
 package ie.dit.student.haverty.alan.txtclock;
 
 public class TxtClock {
@@ -10,7 +16,7 @@ public class TxtClock {
 	 * @author Alan Haverty
 	 */
 	public static void main(String args[]) {
-		String userInput = args[0];
+		
 
 		// When the user does not provide arguments
 		if (args.length == 0) {
@@ -21,6 +27,8 @@ public class TxtClock {
 		}
 		// When the user provides one argument
 		else if (args.length == 1) {
+			
+			String userInput = args[0];
 
 			// Check if the users input is a valid 24hr time
 			if (TimeController.validateTime(userInput)) {
