@@ -1,3 +1,4 @@
+0	zero
 1	one
 2	two
 3	three
@@ -57,5 +58,6 @@
 57	fifty-seven
 58	fifty-eight
 59	fifty-nine
+100	twelve
 101	a quarter
 102	half

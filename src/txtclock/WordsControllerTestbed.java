@@ -6,7 +6,9 @@
  */
 package ie.dit.student.haverty.alan.txtclock;
 
+import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -22,10 +24,14 @@ public class WordsControllerTestbed {
 	 */
 	public static void main(String args[]) {
 		
+		System.out.println("Current dir: " + System.getProperty("user.dir"));
+		
 		Map<Integer, String> wordMap = new HashMap<Integer, String>();
 		
 		try {
-			wordMap = WordsController.importWords("words_eng.txt");
+			URL fileURL = WordsControllerTestbed.class.getName().getClass().getResource("/ie/dit/student/haverty/alan/txtclock/words_eng.txt");
+			File textFile = new File(fileURL.getFile());
+			wordMap = WordsController.importWords(textFile);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

@@ -38,12 +38,12 @@ public class Time {
 	 */
 	public Time(int hour, int minute) {
 
-		// Call the primary constructor for this class
+		// Call the primary constructor for this class passing arguments from this constructor
 		this(hour, minute, 0);
 	}
 
 	/**
-	 * Constructor used to setup a Time object with a custom Hour, Minute and
+	 * Primary Constructor used to setup a Time object with a custom Hour, Minute and
 	 * Second
 	 * 
 	 * @param hour
@@ -102,6 +102,10 @@ public class Time {
 		time.set(Calendar.HOUR_OF_DAY, hour);
 		time.set(Calendar.MINUTE, minute);
 		time.set(Calendar.SECOND, second);
+	}
+	
+	public void setToCurrentSystemTime(){
+		time = Calendar.getInstance();
 	}
 	
 	public int getHour() {

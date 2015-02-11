@@ -44,11 +44,6 @@ public class TimeModelTestbed {
 		Time ntpTime = NetworkTimeController.getTimeFromServer(ntpServer);
 		System.out.println(ntpServer + " says it is: " + LanguageController.timeInEnglish(ntpTime));
 		
-		try{
-		System.out.println(new File(".").getCanonicalPath());
-		}catch(IOException e){
-			e.printStackTrace();
-		}
 
 	}
 
