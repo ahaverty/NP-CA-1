@@ -58,6 +58,5 @@
 57	fifty-seven
 58	fifty-eight
 59	fifty-nine
-100	twelve
 101	a quarter
 102	half
