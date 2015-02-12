@@ -1,5 +1,5 @@
 /**
- * Alan Haverty
+ * Alan Haverty DT211/3
  * C12410858
  * alan.haverty@student.dit.ie
  * Network Programming CA 1 - NTP TxtClock

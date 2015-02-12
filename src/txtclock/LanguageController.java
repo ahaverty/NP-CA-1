@@ -6,7 +6,7 @@
  */
 package ie.dit.student.haverty.alan.txtclock;
 
-import java.io.File;
+import java.io.File;	// Importing file
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
@@ -118,7 +118,7 @@ public class LanguageController {
 	private static File openWordFile(String filename) {
 		File textFile = null;
 		try {
-			URL fileURL = LanguageController.class.getName().getClass().getResource("/ie/dit/student/haverty/alan/txtclock/words_eng.txt");
+			URL fileURL = LanguageController.class.getName().getClass().getResource("ie/dit/student/haverty/alan/txtclock/words_eng.txt");
 			textFile = new File(fileURL.getFile());
 		} catch (NullPointerException e) {
 			System.out.println("Error: Unable to find file: '" + filename
