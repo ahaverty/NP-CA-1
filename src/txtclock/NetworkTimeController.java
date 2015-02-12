@@ -4,7 +4,7 @@
  * alan.haverty@student.dit.ie
  * Network Programming CA 1 - NTP TxtClock
  */
-package ie.dit.student.haverty.alan.txtclock;
+package ie.dit.student.haverty.alan.txtclock;	// The package this class belongs to
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -14,7 +14,7 @@ import java.net.InetAddress;
 import java.net.Socket;
 import java.util.Calendar;
 
-// Imports from NTP apache jar for NTP client and TimeInfo object for holding the time result
+// Imports from NTP apache commons net jar for NTP client connection and TimeInfo object for holding the time result
 import org.apache.commons.net.ntp.NTPUDPClient;
 import org.apache.commons.net.ntp.NtpV3Packet;
 import org.apache.commons.net.ntp.TimeInfo;
@@ -48,7 +48,7 @@ public class NetworkTimeController {
 		// Initialise a new Time object to store the time from the TimeInfo
 		// object
 		Time time = new Time();
-		
+
 		boolean timedOut = false;
 
 		// Wrapping the ntp request in a try catch
@@ -72,19 +72,19 @@ public class NetworkTimeController {
 			// TODO return to allow main program to request system time or just
 			// check if the Time object is empty?
 			System.out.println("The NTP request timed out.");
-			
+
 			timedOut = true;
-			
+
 		} // Ending try catch
 
 		// Initialise a calendar object
 		Calendar cal = Calendar.getInstance();
-		
+
 		//
 		if (timedOut == false) {
 			// Set the calendar object using the NTP result's milliseconds since
 			// epoch
-			
+
 			long ntpEpochMillis = info.getMessage().getTransmitTimeStamp().getTime();
 
 			cal.setTimeInMillis(ntpEpochMillis);

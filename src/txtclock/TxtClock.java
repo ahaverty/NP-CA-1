@@ -4,11 +4,12 @@
  * alan.haverty@student.dit.ie
  * Network Programming CA 1 - NTP TxtClock
  */
-package ie.dit.student.haverty.alan.txtclock;
+package ie.dit.student.haverty.alan.txtclock;	// The package this class belongs to
 
-import ie.dit.student.haverty.alan.txtclock.LanguageController;
-import ie.dit.student.haverty.alan.txtclock.NetworkTimeController;
-
+/**
+ * Main class for TxtClock program
+ * @author Alan Haverty
+ */
 public class TxtClock {
 
 	/**
@@ -46,19 +47,23 @@ public class TxtClock {
 			// not null
 			if (ntpTime != null) {
 
-				// Set the method used for later printing to console
+				// Set the method used to retrieve the time, for later printing to console
 				methodUsed = "NTP Server";
-
+				
+				// Set the main function's time object to the result of the NTP request 
 				time = ntpTime;
+				
 			} // End if statement for when NTP returned a time that was not null
 
 			// If the Time object returned from the NetworkTimeController was
 			// null (Usually meaning the NTP request failed or timed out)
 			else {
+				// Warn the user about the failure to retrieve the time from the
+				// remote NTP server
 				System.out.println("Warning: Failed to retrieve the time from a remote NTP server.");
 				System.out.println("Using local system time instead.");
 
-				// Set the method used for later printing to console
+				// Set the method used to retrieve the time, for later printing to console
 				methodUsed = "Current System Time";
 				// Set the time to the system's current time
 				time.setToCurrentSystemTime();
@@ -78,7 +83,8 @@ public class TxtClock {
 				// Extract the valid time and create a time object
 				time = TimeController.extractTime(userInput);
 
-				// Set the method used for later printing to console
+				// Set the method used to retrieve the time, for later printing
+				// to console
 				methodUsed = "User Input";
 
 			} // End the if for when user input was a valid time format
@@ -92,7 +98,7 @@ public class TxtClock {
 			} // End the else when input was not in a valid 24hr time format
 
 		} // End the else if for when the user provided one argument
-			// When the user input more than one argument
+			// Else when the user input more than one argument
 		else {
 			// Call the warn function to output instructions to the console
 			// and exit the program
@@ -126,6 +132,7 @@ public class TxtClock {
 	 */
 	private static void warnInvalidInput() {
 
+		// Console messages to instruct the user how to use the program properly
 		System.out.println("TxtClock has detected incorrect input.");
 		System.out.println("Options:");
 		System.out.println("1: Provide one argument in the 24hr time format"

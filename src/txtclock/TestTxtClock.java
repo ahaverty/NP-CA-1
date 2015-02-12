@@ -4,7 +4,7 @@
  * alan.haverty@student.dit.ie
  * Network Programming CA 1 - NTP TxtClock
  */
-package ie.dit.student.haverty.alan.txtclock;
+package ie.dit.student.haverty.alan.txtclock;	// The package this class belongs to
 
 /**
  * Class to test program with dummy input and expected output. NOTE: MUST RUN
