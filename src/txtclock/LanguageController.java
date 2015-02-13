@@ -56,8 +56,10 @@ public class LanguageController {
 			// Print the error to the console along with the exception message
 			System.out.println("Incorrect file has been opened: "
 					+ e.getMessage());
-			// Exit the program
-			System.exit(-2);
+			
+			// Exit the program and print the error code
+			System.out.println("Exit Code: -3");
+			System.exit(-3);
 		} // End catch block
 
 		// Retrieve the minute, hour and second values into new variables from
@@ -202,7 +204,7 @@ public class LanguageController {
 			// Compile the strings into one sentence, including the seconds
 			timeInWords = "It is " + minuteStr + tenseStr + hourStr
 					+ " o'clock and " + secondStr + " second";
-			
+
 			// If the second is plural
 			if (second > 1) {
 				// Append an 's' character to the sentence
@@ -210,25 +212,48 @@ public class LanguageController {
 			} // End plural second check
 		}
 		// ----- End algorithm to create the English sentence ----- //
-		
-		
+
 		// Return the compiled english sentence
 		return timeInWords;
 	}
 
+	/**
+	 * Function returns a file used to later extract the file data into a word
+	 * Map to allow the conversion of an integer value into its English
+	 * equivalent word.
+	 * 
+	 * @param filename
+	 * @return the text file
+	 */
 	private static File openWordFile(String filename) {
+
+		// Initialise a null file
 		File textFile = null;
+
+		// Attempt to retrieve the file
 		try {
+			// Get a pointer URL to the file, using the project sourcepath as a
+			// starting point
 			URL fileURL = LanguageController.class.getName().getClass().getResource("/ie/dit/student/haverty/alan/txtclock/"
 					+ filename);
+			// open the text file using the URL pointer from above
 			textFile = new File(fileURL.getFile());
-		} catch (NullPointerException e) {
+		}// End try parenthesis
+
+		// Catch exception when the file can't be found
+		catch (NullPointerException e) {
+			// Print an error to the console along with the filename that
+			// couldn't be found
 			System.out.println("Error: Unable to find file: '" + filename
 					+ "'. Please check that it exists.");
 
-			// TODO Change to unique exit value and document throughout project
-			System.exit(-1);
-		}
+			// Exit the program and print the error code
+			System.out.println("Exit Code: -4");
+			System.exit(-4);
+		} // End catch exception when the file couldn't be found
+
+		// Return the text file
 		return textFile;
-	}
-}
+	} // End openWordFile() function
+
+} // End LanguageController class

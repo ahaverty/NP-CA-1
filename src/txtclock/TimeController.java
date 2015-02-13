@@ -6,8 +6,8 @@
  */
 package ie.dit.student.haverty.alan.txtclock;	// The package this class belongs to
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.util.regex.Matcher;	// Import to allow the class to use the regex matcher
+import java.util.regex.Pattern; // Import to allow the class to use the regex pattern to create a regex matcher
 
 /**
  * Controller class used to validate string inputs and parse the strings into
@@ -21,6 +21,8 @@ public class TimeController {
 	// RegEx string for 24hr time with option of including seconds.
 	// Seconds nested grouped for easier extraction without extracting colon.
 	private static String time_pattern = "([01]?[0-9]|2[0-3]):([0-5][0-9])(:([0-5][0-9]))?";
+	
+	// Set a class Pattern variable
 	private static Pattern pattern;
 
 	/**
@@ -86,13 +88,13 @@ public class TimeController {
 				// Parse the fourth subsequence into the 'second' variable
 				second = Integer.parseInt(matcher.group(4));
 			}
-		}
+		} // End the if matcher block
 
 		// Set the time of the Time object
 		time.setTime(hour, minute, second);
 
 		// Return the set Time object
 		return time;
-	}
+	} // End extractTime function
 
-}
+} // End TimeController class

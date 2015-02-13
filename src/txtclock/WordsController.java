@@ -66,8 +66,9 @@ public class WordsController {
 				System.out.println("Please ensure there are no invalid characters or whitespaces.");
 				System.out.println("Exiting TxtClock program.");
 
-				// Exit the system
-				System.exit(-1);
+				// Exit the program and print the error code
+				System.out.println("Exit Code: -5");
+				System.exit(-5);
 			} // End catch block preventing invalid input from the text file
 
 		} // End while for reading in from the text file
