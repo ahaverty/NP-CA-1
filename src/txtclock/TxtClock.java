@@ -132,7 +132,6 @@ public class TxtClock {
 		System.out.println(LanguageController.timeInEnglish(time));
 
 		// Exit with 0 to suggest the program ran successfully
-		System.out.println("Exit Code: 0");
 		System.exit(0);
 
 	} // End main() TxtClock function
